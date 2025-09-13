@@ -1,0 +1,8 @@
+# predictor/urls.py
+
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('', views.upload_predict, name='upload_predict'),
+]

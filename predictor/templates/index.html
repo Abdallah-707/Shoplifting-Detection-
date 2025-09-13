@@ -1,0 +1,44 @@
+<!-- templates/index.html -->
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoplift Detector</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f4f9; color: #333; text-align: center; margin: 0; padding: 20px; }
+        .container { max-width: 600px; margin: auto; background: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        h1 { color: #4a4a4a; }
+        form { margin-top: 20px; }
+        input[type="file"] { border: 2px dashed #ddd; padding: 20px; border-radius: 5px; display: block; width: calc(100% - 44px); margin-bottom: 20px; }
+        input[type="submit"] { background-color: #5c67f2; color: white; padding: 12px 25px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; transition: background-color 0.3s; }
+        input[type="submit"]:hover { background-color: #4a54c4; }
+        #result { margin-top: 30px; padding: 20px; background-color: #eef0ff; border-radius: 5px; border: 1px solid #d6d9fb; }
+        h2 { color: #5c67f2; }
+        video { max-width: 100%; border-radius: 5px; margin-top: 15px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Upload Video</h1>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="file" name="video_file" accept="video/*" required>
+            <input type="submit" value="Video Analysis">
+        </form>
+
+        {% if prediction %}
+        <div id="result">
+            <h2>Result: {{ prediction }}</h2>
+            {% if video_url %}
+                <video controls>
+                    <source src="{{ video_url }}" type="video/mp4">
+                    Your browser doesn't support Video
+                </video>
+            {% endif %}
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
