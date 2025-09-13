@@ -143,11 +143,3 @@ pip install django tensorflow opencv-python scikit-learn matplotlib numpy
 ## 📄 License
 
 MIT License — free to use, modify, and share.
-
----
-
-## 👤 Author
-
-Developed by [Your Name]  
-Contributions are welcome!
-
