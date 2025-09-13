@@ -25,13 +25,14 @@ SHOP/
 │   │   ├── urls.py
 │   │   ├── utils.py
 │   │   ├── views.py
-│   │   ├── best_shoplifting_model.h5
+│   │   ├── best_shoplifting_model.h5 (Replaced with "shop-detection.ipynb"
 │   │   └── templates/
 │   │       └── index.html
 │   ├── templates/
 │   │   └── index.html
 │   ├── db.sqlite3
 │   └── manage.py
+├── shop-detection.ipynb
 └── README.md
 ```
 
